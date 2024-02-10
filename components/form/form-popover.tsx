@@ -1,6 +1,10 @@
 'use client';
 
 import { X } from 'lucide-react';
+import { toast } from 'sonner';
+import { ElementRef, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+
 import {
   Popover,
   PopoverClose,
@@ -8,14 +12,12 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
+import { useAction } from '@/hooks/use-action';
+import { createBoard } from '@/actions/create-board';
+
 import { FormInput } from './form-input';
 import { FormSubmit } from './form-submit';
-import { useAction } from '@/hooks/use-action';
-import { createBoard } from '@/actions/create-group';
-import { toast } from 'sonner';
 import { FormPicker } from './form-picker';
-import { ElementRef, useRef } from 'react';
-import { useRouter } from 'next/navigation';
 
 interface FormPopover {
   children: React.ReactNode;
